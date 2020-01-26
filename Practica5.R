@@ -104,4 +104,32 @@ E[u1] + E[u2]
 var(u1+u2)
 var(u1) + var(u2)
 # c. Estimate P 
+events = replicate(10000, sample((u1+u2 <= 1.5), 1))
+tab = table(events)
+tab
+prop.table(tab)
 # d. Estimate P(√U1+ √U2)≤1.5.
+events = replicate(10000, sample((sqrt(u1)+sqrt(u2) <= 1.5), 1))
+tab = table(events)
+tab
+prop.table(tab)
+# 7.Suppose U1, U2 and U3 are independent uniform random variables 
+# on the interval (0, 1). Use simulation to estimate the following 
+# quantities: 
+# a.	E[U1 + U2 + U3]. 
+U1 = runif(1000, 0, 1)
+U2 = runif(1000, 0, 1)
+U3  = runif(1000, 0, 1)
+E[U1 + U2 + U3]
+# b.	Var(U1 + U2 + U3) and Var(U1) + Var (U2) + Var(U3). 
+var(U1 + U2 + U3) 
+var(U1) + var (U2) + var(U3)
+# c.	E[raiz(u1+u2+u3)]
+E[sqrt(U1+U2+U3)]
+# d. P[Raiz(u1) + Raiz(u2)+Raiz(u3) >=0.8]  
+p[(sqrt(U1) + sqrt(U2) + sqrt(U3)) >=0.8]
+events = replicate(10000, sample(((sqrt(U1) + sqrt(U2) + sqrt(U3)) >=0.8), 1))
+tab = table(events)
+tab
+prop.table(tab)
+  
