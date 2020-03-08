@@ -7,4 +7,4 @@ for (i in 1:n) {
   x <- (o * sqrt(12/n) * (sum(runif(n)) - (n/2))) + u
   f[i] = x
 }
-f
+
